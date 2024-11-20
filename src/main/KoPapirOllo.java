@@ -14,7 +14,11 @@ public class KoPapirOllo {
         
         System.out.println("Kérlek, válassz: Kő (0), Papír (1), Olló (2):");
         int jatekosValasztas = sc.nextInt();
-
+        
+        if (jatekosValasztas < 0 || jatekosValasztas > 2) {
+        System.out.println("Helytelen választás! Csak 0, 1 vagy 2 lehet.");
+        return;
+        }
        
         int gepValasztas = random.nextInt(3);
 
