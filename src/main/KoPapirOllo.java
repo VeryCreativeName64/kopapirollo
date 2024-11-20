@@ -1,29 +1,36 @@
-
 package main;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class KoPapirOllo {
 
     static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
+        String[] opciok = {"Kő", "Papír", "Olló"};
+        Random random = new Random();
+
+        
+        System.out.println("Kérlek, válassz: Kő (0), Papír (1), Olló (2):");
+        int jatekosValasztas = sc.nextInt();
+
        
-        System.out.print("egy egész számot kérek: ");
-      
-        int szam = sc.nextInt();
+        int gepValasztas = random.nextInt(3);
+
         
-        System.out.println("A bekért szám duplája: " + szam*2);
+        System.out.println("Játékos választása: " + opciok[jatekosValasztas]);
+        System.out.println("Gép választása: " + opciok[gepValasztas]);
+
         
-        
-        sc.nextLine();
-        
-       
-        System.out.print("szöveges adatot kérek: ");
-        
-        String szoveg = sc.nextLine();
-        
-        System.out.println("A bekért szöveg: " + szoveg);
- 
+        if (jatekosValasztas == gepValasztas) {
+            System.out.println("Döntetlen!");
+        } else if ((jatekosValasztas == 0 && gepValasztas == 2) ||
+                   (jatekosValasztas == 1 && gepValasztas == 0) ||
+                   (jatekosValasztas == 2 && gepValasztas == 1)) {
+            System.out.println("Játékos nyert!");
+        } else {
+            System.out.println("Gép nyert!");
+        }
     }
-    
 }
